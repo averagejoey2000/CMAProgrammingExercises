@@ -19,7 +19,7 @@ using namespace std;
 
 		do
 		{
-			cout <<I'm thinking of a number 1-100. Guess what it is?" <<endl;
+			cout <<"I'm thinking of a number 1-100. Guess what it is?" <<endl;
 			cin >> userGuess;
 			while (userGuess <=0 || userGuess > 100)
 			{
@@ -28,13 +28,13 @@ using namespace std;
 			}
 			if(compNum < userGuess)
 				cout <<"Too high, try again!" <<endl;
-			if(compNum < userGuess)
-				cout <<"Too high, try again!" <<endl;
-			if(compNum < userGuess)
+			if(compNum > userGuess)
+				cout <<"Too low, try again!" <<endl;
+			if(compNum == userGuess)
 			{
 				cout<<"Nice work! My number " << compNum << "matches your guess " << userGuess << endl;
 				cout <<"You Win!" << endl;
 			}
 		} while (compNum != userGuess);
-		return 0
+		return 0;
 	}
