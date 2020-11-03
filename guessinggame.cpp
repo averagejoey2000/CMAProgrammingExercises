@@ -32,7 +32,7 @@ using namespace std;
 				cout <<"Too low, try again!" <<endl;
 			if(compNum == userGuess)
 			{
-				cout<<"Nice work! My number " << compNum << "matches your guess " << userGuess << endl;
+				cout<<"Nice work! My number " << compNum << " matches your guess " << userGuess << endl;
 				cout <<"You Win!" << endl;
 			}
 		} while (compNum != userGuess);
