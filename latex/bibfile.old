@@ -1,0 +1,46 @@
+@book{DownEasters,
+  AUTHOR={Basil Lubbock},
+  TITLE={The Down-Easters: American deep-water sailing ships, 1869-1929},
+  PUBLISHER={Brown, Son & Ferguson},
+  ADDRESS={52-58 Darnley Street, Glasgow, Scotland},
+  YEAR={1953}
+ }
+
+@book{LastCentury,
+  AUTHOR={Gardiner, Robert},
+  TITLE={Sail's last century: the merchant sailing ship, 1830-1930},
+  SERIES={Conway's History of The Ship},
+  PUBLISHER={Naval Institute Press},
+  ADDRESS={Annapolis, Md.},
+  YEAR={1993}
+ }
+
+@book{MacGregorClipper,
+  AUTHOR={David R. MacGregor},
+  TITLE={Clipper Ships},
+  PUBLISHER={Argus Books Limited},
+  ADDRESS={14 St. James Road, Watford Hertfordshire},
+  YEAR={1979}
+ }
+
+@book{Schedule,
+	AUTHOR={Robert Greenhalgh Albion},
+	TITLE={Square-riggers on schedule: the New York sailing packets to England, France, and the cotton ports},
+	PUBLISHER={Princeton University Press},
+	ADDRESS={Princeton NJ},
+	YEAR={1938}
+}
+@book{SarkLog,
+  AUTHOR={Basil Lubbock},
+  TITLE={The Log of the "Cutty Sark"},
+  PUBLISHER={Brown, Son & Ferguson},
+  ADDRESS={52-58 Darnley Street, Glasgow, Scotland},
+  YEAR={1945}
+ }
+@book{Windjammers,
+  AUTHOR={Basil Lubbock},
+  TITLE={The Last of The Windjammers},
+  PUBLISHER={Brown, Son & Ferguson},
+  ADDRESS={52-58 Darnley Street, Glasgow, Scotland},
+  YEAR={1929}
+ }|
