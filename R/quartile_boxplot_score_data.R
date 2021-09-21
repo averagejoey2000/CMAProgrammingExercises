@@ -16,15 +16,15 @@ IQR(data$Score)
 
 #Find outliers:
 # 1) outliers<Q_1-1.5*IQR
-outlire_min_value=quantile(data$Score, 0.25)-1.5*IQR(data$Score)
-outlire_min_value
-data[data<outlire_min_value]
+outlier_min_value=quantile(data$Score, 0.25)-1.5*IQR(data$Score)
+outlier_min_value
+data[data<outlier_min_value]
 
 # 2)outliers<Q_3+1.5*IQR
-outlire_max_value=quantile(data$Score, 0.75)+1.5*IQR(data$Score)
-outlire_max_value
+outlier_max_value=quantile(data$Score, 0.75)+1.5*IQR(data$Score)
+outlier_max_value
 
-data[data>outlire_max_value]
+data[data>outlier_max_value]
 
 
 
@@ -36,7 +36,7 @@ boxplot(data$Score)
 boxplot(data$Score, 
         
         col="magenta",
-        notch = T,
+        notch = F,
         
         main=" Boxplot of Score ",
         ylab="Exam Scores" )
