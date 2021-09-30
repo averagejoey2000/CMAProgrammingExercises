@@ -1,0 +1,25 @@
+Syntax and knit testing for R Markdown files.
+
+`r 2+2`
+
+```{r data=read.csv("homedata=read.csv("homework3/phone.csv")
+outlier_min_value=quantile(data$speed, 0.25)-1.5*IQR(data$speed)
+outlier_min_value
+data[data<outlier_min_value]
+
+outlier_max_value=quantile(data$speed, 0.75)+1.5*IQR(data$speed)
+outlier_max_value
+
+data[data>outlier_max_value]
+
+boxplot(data$speed,
+
+	col="slateblue",
+	notch = T,
+
+	main="Cell Phone Data Speeds",
+	ylab="Speeds in Mbps")}
+
+```
+
+
