@@ -1,0 +1,291 @@
+
+
+---
+title: "Quiz 3 (R-Studio)"
+author: "Joey Simone"
+output: word_document
+---
+
+1. Load Data from excel file into Rstudio. 
+
+
+```{r}
+data=read.csv("pulse_rates.csv")
+
+```
+
+
+2. Provide summary of data.
+
+```{r}
+summary(data)
+```
+
+3. Create bar plot for Gender variable. 
+
+```{r}
+
+gender <- table(data$Gender) 
+gender
+
+barplot(gender,
+        col = "red",       
+        border = "black",      
+         ylim=c(0,20),
+        main = "Gender",
+        ylab = "Number of People")
+
+
+```
+
+
+
+4. (2 point) Create pie chart for Gender variable. 
+
+
+```{r}
+
+pie(gender, main = "gender", col = rainbow(12))
+
+
+```
+
+
+
+
+
+
+ 5. Construct histogram with five bars for pulse rates of Males. 
+ 
+ 
+```{r}
+hist(data$PulseRate [data$Gender=="Male"],
+     
+breaks =seq(min(data$PulseRate[data$Gender=="Male"]), max(data$PulseRate[data$Gender=="Male"]), length.out=6),
+
+main="Pulse Rates of Males ",
+ylab="Frequency",
+xlab="Pulse Rates",
+xlim=c(50,110),
+col="red", 
+border="blue")
+
+```
+
+6. (2 point) Construct histogram with six bars for pulse rates of Females. 
+ 
+ 
+```{r}
+hist(data$PulseRate [data$Gender=="Female"],
+     
+breaks =seq(min(data$PulseRate[data$Gender=="Female"]), max(data$PulseRate[data$Gender=="Female"]), length.out=7),
+
+main="Pulse Rates of Females ",
+ylab="Frequency",
+xlab="Pulse Rates",
+xlim=c(50,110),
+col="red", 
+border="blue")
+
+
+```
+
+
+
+
+7. Find quartiles for pulse rates of Males. 
+
+```{r}
+quantile(data$PulseRate [data$Gender=="Male"])
+```
+
+
+8. Find the 37th  percentile for pulse rates of Males. 
+
+```{r}
+quantile(data$PulseRate [data$Gender=="Male"], 0.37)
+```
+ 
+ **37th percentile is** 
+
+9. (1 point) Find quartiles for pulse rates of Females. 
+
+```{r}
+
+quantile(data$PulseRate [data$Gender=="Female"])
+```
+
+
+10.(1 point) Find the 64th  percentile for pulse rates of Females. 
+
+```{r}
+
+quantile(data$PulseRate [data$Gender=="Female"], 0.64)
+```
+ 
+**64th percentile is** 
+
+
+11. Find IQR for pulse rates of Males
+
+
+```{r}
+IQR(data$PulseRate [data$Gender=="Male"])
+```
+
+
+12. Find outliers for pulse rates of Males. 
+
+```{r}
+outliere_lower=quantile(data$PulseRate [data$Gender=="Male"], 0.25)-1.5*IQR(data$PulseRate [data$Gender=="Male"])
+data$PulseRate [data$Gender=="Male" & data$PulseRate<outliere_lower]
+
+outliere_lower=quantile(data$PulseRate [data$Gender=="Male"], 0.75)+1.5*IQR(data$PulseRate [data$Gender=="Male"])
+data$PulseRate [data$Gender=="Male" & data$PulseRate>outliere_lower]
+
+```
+
+
+**Outlier(s) is (are)** 
+
+13. Construct BOX PLOT for pulse rates of Males. 
+
+```{r}
+boxplot(data$PulseRate [data$Gender=="Male"],
+        main=" Pulse Rates of Males ",
+       xlab="Pulse Rates",
+       ylim=c(50,110),
+        
+        col="yellow",
+        border=  "tomato1"  ,
+     horizontal = T)
+```
+
+
+
+
+14. (1 point) Find IQR for pulse rates of Females
+
+
+```{r}
+
+IQR(data$PulseRate [data$Gender=="Female"])
+```
+
+
+15. (2 point) Find outliers for pulse rates of Females. 
+
+```{r}
+outliere_lower=quantile(data$PulseRate [data$Gender=="Female"], 0.25)-1.5*IQR(data$PulseRate [data$Gender=="Female"])
+data$PulseRate [data$Gender=="Female" & data$PulseRate<outliere_lower]
+
+outliere_lower=quantile(data$PulseRate [data$Gender=="Female"], 0.75)+1.5*IQR(data$PulseRate [data$Gender=="Female"])
+data$PulseRate [data$Gender=="Female" & data$PulseRate>outliere_lower]
+
+
+```
+
+
+**Outlier(s) is (are)** 
+
+16. (2 point) Construct BOX PLOT for pulse rates of Females. 
+
+```{r}
+boxplot(data$PulseRate [data$Gender=="Female"],
+        main=" Pulse Rates of Females ",
+       xlab="Pulse Rates",
+       ylim=c(50,110),
+        
+        col="yellow",
+        border=  "tomato1"  ,
+     horizontal = T)
+```
+
+
+
+
+17. (2 point) Compare these two box plots and describe the differences between these two box plots.
+
+Pulse rate of Men is lower than Women
+
+18. (2 point) Find the mean for pules rates of Males and Females. Compare these means. Write a complite sentense. 
+
+**The mean for pulse rates of Males is ** 
+The mean pulse of men is `r mean(data$Gender=="Male")` Beats per minute.
+**The mean for pulse rates of Females is ** 
+
+The mean pulse of women is `r mean(data$Gender=="Female")` Beats per minute.
+**Compare these means: ** 
+
+
+19. (2 point) Find the median for for pules rates of Males and Females. Compare these meadian values. Write a complite sentense. 
+
+```{r}
+
+
+
+```
+
+
+**The median for pulse rates of Males is ** 
+
+**The median for pulse rates of Females is ** 
+
+**Compare these median values: ** 
+
+
+20. Find the mode for pules rates of Males.  
+
+```{r}
+
+mode=table(data$PulseRate [data$Gender=="Male"])
+
+names(mode)[mode==max(mode)]
+
+
+
+```
+
+**The mode(s) for pulse rates of Males is (are) ** 
+
+
+
+21. (1 point) Find the mode for pules rates of Females.  
+
+```{r}
+
+
+
+
+```
+
+
+
+**The mode(s) for pulse rates of Females is (are) ** 
+
+
+
+
+
+21. (2 point) Find a standard deviation for for pules rates of Males and Females. Compare these standard deviations. Write a complite sentense. (Hint: sd(name of data$name of variable))
+
+```{r}
+
+
+```
+
+**The standard deviation for pulse rates of Males is **
+
+**The standard deviation for pulse rate of Female is **
+
+**Compare these standard deviations: ** 
+
+
+
+
+
+
+
+
+
+
