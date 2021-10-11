@@ -106,7 +106,7 @@ quantile(data$PulseRate [data$Gender=="Male"])
 quantile(data$PulseRate [data$Gender=="Male"], 0.37)
 ```
  
- **37th percentile is** 
+ **37th percentile is 61.55** 
 
 9. (1 point) Find quartiles for pulse rates of Females. 
 
@@ -123,7 +123,7 @@ quantile(data$PulseRate [data$Gender=="Female"])
 quantile(data$PulseRate [data$Gender=="Female"], 0.64)
 ```
  
-**64th percentile is** 
+**64th percentile is 80.36**
 
 
 11. Find IQR for pulse rates of Males
@@ -146,7 +146,7 @@ data$PulseRate [data$Gender=="Male" & data$PulseRate>outliere_lower]
 ```
 
 
-**Outlier(s) is (are)** 
+**Outlier(s) is (are)** none
 
 13. Construct BOX PLOT for pulse rates of Males. 
 
@@ -186,7 +186,7 @@ data$PulseRate [data$Gender=="Female" & data$PulseRate>outliere_lower]
 ```
 
 
-**Outlier(s) is (are)** 
+**Outlier(s) is (are)** 53 & 54
 
 16. (2 point) Construct BOX PLOT for pulse rates of Females. 
 
@@ -210,28 +210,23 @@ Pulse rate of Men is lower than Women
 
 18. (2 point) Find the mean for pules rates of Males and Females. Compare these means. Write a complite sentense. 
 
-**The mean for pulse rates of Males is ** 
-The mean pulse of men is `r mean(data$Gender=="Male")` Beats per minute.
-**The mean for pulse rates of Females is ** 
+**The mean for pulse rates of Males is ** \
+The mean pulse of men is `r mean(data$PulseRate [data$Gender=="Male"])` Beats per minute.\
+**The mean for pulse rates of Females is ** \
 
-The mean pulse of women is `r mean(data$Gender=="Female")` Beats per minute.
-**Compare these means: ** 
+The mean pulse of women is `r mean(data$PulseRate [data$Gender=="Female"])` Beats per minute.\
+**Compare these means: ** \
+Mean Pulse for Men is less.\
 
-
-19. (2 point) Find the median for for pules rates of Males and Females. Compare these meadian values. Write a complite sentense. 
-
-```{r}
-
-
-
-```
-
+19. (2 point) Find the median for for pules rates of Males and Females. Compare these meadian values. Write a complite sentense.
 
 **The median for pulse rates of Males is ** 
-
+The median pulse of men is `r median(data$PulseRate [data$Gender=="Male"])` Beats per minute.
 **The median for pulse rates of Females is ** 
 
-**Compare these median values: ** 
+The median pulse of women is `r median(data$PulseRate [data$Gender=="Female"])` Beats per minute.
+**Compare these medians: ** 
+median Pulse for Men is less.
 
 
 20. Find the mode for pules rates of Males.  
@@ -248,11 +243,16 @@ names(mode)[mode==max(mode)]
 
 **The mode(s) for pulse rates of Males is (are) ** 
 
-
+Data for males is bimodal, 60 & 77
 
 21. (1 point) Find the mode for pules rates of Females.  
 
 ```{r}
+
+
+mode=table(data$PulseRate [data$Gender=="Female"])
+
+names(mode)[mode==max(mode)]
 
 
 
@@ -263,29 +263,23 @@ names(mode)[mode==max(mode)]
 
 **The mode(s) for pulse rates of Females is (are) ** 
 
-
+75
 
 
 
 21. (2 point) Find a standard deviation for for pules rates of Males and Females. Compare these standard deviations. Write a complite sentense. (Hint: sd(name of data$name of variable))
 
 ```{r}
-
+sd(data$PulseRate [data$Gender=="Male"])
+sd(data$PulseRate [data$Gender=="Female"])
 
 ```
 
 **The standard deviation for pulse rates of Males is **
+Standard Deviation is 14.24 bpm for males
 
 **The standard deviation for pulse rate of Female is **
+Standard Deviation is 11.69 bpm for females
 
 **Compare these standard deviations: ** 
-
-
-
-
-
-
-
-
-
-
+Females have lower standard deviation, tighter data spread
