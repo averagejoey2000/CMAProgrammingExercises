@@ -2,10 +2,9 @@
 
 ---
 title: "Quiz 6 (R-Studio)"
-author: "Your name is here"
+author: "Joey Simone"
 output:
   word_document: default
-  pdf_document: default
 ---
 
 
@@ -62,6 +61,20 @@ barplot(marital_freq[order(marital_freq, decreasing = T)],
 
 
 
+degree_freq <- table(data$Degree) 
+degree_freq
+
+barplot(degree_freq[order(degree_freq, decreasing = T)],
+        
+        col = rainbow(3),       
+        border = "blue",      
+         ylim=c(0,50),
+        main = "Degree",
+        ylab = "Number of People", 
+)
+        
+    
+
 
 ```
 
@@ -71,10 +84,10 @@ barplot(marital_freq[order(marital_freq, decreasing = T)],
 ```{r}
 
 
-pie(marital_freq,
+pie(degree_freq,
       col = rainbow(5),       
       
-      main = "Marital Status")
+      main = "Degree Status")
 ```
        
 
@@ -82,14 +95,11 @@ pie(marital_freq,
 
 6. (2 point) Create pie chart for Degree variable.
 
-
-
-
-
-
-
 ```{r}
-
+pie(marital_freq,
+      col = rainbow(5),       
+      
+      main = "Marital Status")
 
 
 
