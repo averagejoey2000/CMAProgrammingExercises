@@ -84,10 +84,13 @@ barplot(degree_freq[order(degree_freq, decreasing = T)],
 ```{r}
 
 
-pie(degree_freq,
+pie(marital_freq,
       col = rainbow(5),       
       
-      main = "Degree Status")
+      main = "Marital Status")
+
+
+
 ```
        
 
@@ -96,13 +99,10 @@ pie(degree_freq,
 6. (2 point) Create pie chart for Degree variable.
 
 ```{r}
-pie(marital_freq,
+pie(degree_freq,
       col = rainbow(5),       
       
-      main = "Marital Status")
-
-
-
+      main = "Degree Status")
 
 ```
 
@@ -114,9 +114,12 @@ pie(marital_freq,
 7. (2 point) Construct histogram with seven bars for people's ages.
 
 ```{r}
+age_freq <- table(data$Age) 
+age_freq
 
-
-
+hist(data$Age,
+     breaks =seq(min(data$Age),
+                 max(data$Age), length.out=8))
 ```
 
 
@@ -126,7 +129,7 @@ pie(marital_freq,
 ```{r}
 
 
-
+mean(data$Age)
 
 ```
 
@@ -157,6 +160,14 @@ hist(data$Income[data$Degree=="High School"],
 10. (2 point) Construct histogram for people's income when people have Bachelor Degree (number of bars can be chosen by default in R-studio) .
 
 ```{r}
+hist(data$Income[data$Degree=="Bacehlor"], 
+     
+      main="Income-Bacehlor Degree ",
+     ylab="Frequency",
+     xlab="Income",
+    ylim=c(0,20),
+     col="Blue", 
+     border="red")
 
 
 
