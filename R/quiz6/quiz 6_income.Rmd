@@ -129,12 +129,12 @@ hist(data$Age,
 ```{r}
 
 
-mean(data$Age)
-
+mode=table(as.vector(data$Age))
+names(mode)[mode==max(mode)]
 ```
 
 **The mode is ** 
-
+37
 
 
 
@@ -160,9 +160,9 @@ hist(data$Income[data$Degree=="High School"],
 10. (2 point) Construct histogram for people's income when people have Bachelor Degree (number of bars can be chosen by default in R-studio) .
 
 ```{r}
-hist(data$Income[data$Degree=="Bacehlor"], 
+hist(data$Income[data$Degree=="Bachelor"], 
      
-      main="Income-Bacehlor Degree ",
+      main="Income-Bachelor Degree ",
      ylab="Frequency",
      xlab="Income",
     ylim=c(0,20),
@@ -183,8 +183,29 @@ hist(data$Income[data$Degree=="Bacehlor"],
 11. (2 point) Construct boxplot for people's income when people have high school degree. 
 
 ```{r}
+# Find IQR
+IQR(data$Income [data$Degree=="High School"])
 
+#Find outliers:
+# 1) outliers<Q_1-1.5*IQR
+outlier_min_value=quantile(data$Income [data$Degree=="High School"], 0.25)-1.5*IQR(data$Income [data$Degree=="High School"])
+outlier_min_value
+data[data<outlier_min_value]
 
+boxplot(data$Income [data$Degree=="High School"],
+        main="Incomes of High School Grads",
+       xlab="Income",
+  #     ylim=c(50,110),
+        
+        col="yellow",
+        border=  "tomato1"  ,
+     horizontal = T)
+
+# 2)outliers<Q_3+1.5*IQR
+outlier_max_value=quantile(data$Income [data$Degree=="High School"], 0.75)+1.5*IQR(data$Income [data$Degree=="High School"])
+outlier_max_value
+
+data[data>outlier_max_value]
 
 
 
@@ -193,7 +214,7 @@ hist(data$Income[data$Degree=="Bacehlor"],
 
 **Does boxplot have outliers? If so, how many outliers?**
 
-
+Yes, two high school grads, at 40k and 50k
 
 
 
@@ -225,6 +246,17 @@ boxplot(data$Income[data$Degree=="High School"],
 ```{r}
 
 
+boxplot(data$Income[data$Gender=="Female"], 
+     data$Income[data$Gender=="Male"],
+      names=c("Female", "Male"),
+   
+     xlab="Income",
+          col="Blue", 
+     border="red",
+ horizontal = T)
+
+
+
 
 
 ```
@@ -234,10 +266,23 @@ boxplot(data$Income[data$Degree=="High School"],
 
 14. (1 point) Compare these two box plots and describe the differences between these two box plots. Does anyone boxplot has outliers? If so, how many outliers? 
 
+No Outliers, women have higher max, higher median, larger range.
 
 15. (2 point) Construct three Box Plots for people's number years in school (one with people who have High School Degree, the other who have Bachelor degree and last one who have Graduate degree) on the same plot. 
 
 ```{r}
+
+
+boxplot(data$Years_of_School[data$Degree=="High School"], 
+     data$Years_of_School[data$Degree=="Bachelor"],
+     data$Years_of_School[data$Degree=="Graduate"], 
+      names=c("High School", "Bachelor","Graduate" ),
+   
+     xlab="Years of School",
+          col="Blue", 
+     border="red",
+ horizontal = T)
+
 
 
 
@@ -248,6 +293,7 @@ boxplot(data$Income[data$Degree=="High School"],
 
 16. (1 point) Compare these three box plots and describe the differences between these two box plots. Does anyone boxplot has outliers? If so, how many outliers? 
 
+All plots have two outliers, there is a dependent relationship between degree acheived and number of years in school, high school least, graduate most. Interestingly, for Bachelor, 1st quartile and mean are touching, that's strange.
 
 
 17. Find the mean of people's income when people have high school degree.
@@ -262,6 +308,7 @@ mean(data$Income[data$Degree=="High School"])
 
 ```{r}
 
+mean(data$Income[data$Gender=="Male"])
 
 ```
 
@@ -271,6 +318,7 @@ mean(data$Income[data$Degree=="High School"])
 
 ```{r}
 
+median(data$Income[data$Degree=="Graduate"])
 
 ```
 
@@ -279,6 +327,9 @@ mean(data$Income[data$Degree=="High School"])
 20. (1 point) Find three standard deviations for people's income (one with people who have High School Degree, the other who have Bachelor degree and last one who have Graduate degree) 
 ```{r}
 
+sd(data$Income[data$Degree=="High School"])
+sd(data$Income[data$Degree=="Bachelor"])
+sd(data$Income[data$Degree=="Graduate"])
        
 
 ```
@@ -286,4 +337,4 @@ mean(data$Income[data$Degree=="High School"])
 **Compare these standard deviations: **
 
 
-
+Standard Deviation for high school is least, deviation for Bachelor is almost twice as much, deviation for Graduate is a little more.
