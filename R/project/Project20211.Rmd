@@ -1,0 +1,371 @@
+
+
+---
+title: "Project"
+author: "Your name is here"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+
+1. (6 points for collecting data) Load Your Data from excel file into Rstudio. 
+
+
+```{r}
+
+data=read.csv("mydata.csv", stringsAsFactors = T)
+
+
+```
+
+2.Provide summary of data.
+
+```{r}
+
+summary(data)
+
+```
+
+
+3.(2points) Create a bar plot for hair color of men. 
+
+```{r}
+
+
+
+    
+```
+
+
+4.(2points) Create a pie chart for hair color of women. 
+
+
+```{r}
+
+
+```
+       
+
+5.(2points) Construct histogram for height of men. (Number of bars can be choosen by default in R-studio) 
+
+
+
+
+```{r}
+
+
+
+
+```
+
+
+
+
+
+6.(2points) Construct histogram for shoe size for women. (Number of bars can be choosen by default in R-studio)
+```{r}
+
+
+
+```
+
+
+
+
+
+
+7.(2points)	Construct two Box Plots (one for height of men and another for height of women) on the same plot.
+
+```{r}
+
+
+
+```
+
+
+
+8.(1points) Compare these two box plots and describe the differences between these two box plots. Does any boxplot have outliers? If so, how many outliers? 
+
+
+
+9.(2points) Construct two Box Plots (one for size of shoes for men and another for size of shoes for women) on the same plot.
+
+
+```{r}
+
+
+
+```
+
+
+
+
+10.(1points) Compare these two box plots and describe the differences between these two box plots. Does any boxplot have outliers? If so, how many outliers? 
+
+
+
+
+11.(2points) Construct a 90% confidence interval for the estimate of mean of men's height. 
+
+```{r}
+
+
+
+```
+
+**Write a statement that correctly interprets the confidence interval.**
+
+
+
+
+12.(2points) Construct a 95% confidence interval for the estimate of mean of women's height. 
+
+```{r}
+
+
+
+
+```
+
+**Write a statement that correctly interprets the confidence interval.**
+
+
+
+13.(2points) Construct a 94% confidence interval for the estimate of mean of shoe size for women. 
+
+```{r}
+
+
+
+```
+
+**Write a statement that correctly interprets the confidence interval.**
+
+
+
+
+
+
+
+14. (4 points) Write two claims for any two different variables of your data (Height_M or Height_W or Size_Shoes_M or Size_Shoes_W). Make your claim as alternative hypothesis and show that a Null hypothesis is wrong, so it means that an  alternative hypothesis (a claim) is   true. Each claim should have different comparison sign: less, greater or not equal.
+
+Please indicate:
+1)	What is your claim? 
+2)	What is the opposite statement?
+3)	What is null and alternative hypothesis. 
+4)	What is p-value.
+5)	Write conclusion about your claim. 
+
+
+Example: 
+
+1) Claim: The average (mean) size of shoes for women is less than 9. 
+
+2) Opposite statement: The average size of shoes for women is greater or equal 9. 
+
+3) H_0: mean=9
+   H_1: mean<9
+   
+ 4) Creat R-code to find p-value
+
+t.test(data$Size_Shoes_W, mu=9, alternative="less")
+
+5) Write Conclusion: Since  p-value = 0.001507<alpha=0.05, we reject H_0. We have enough evidence to support the claim.
+
+Part a)
+
+**1) Claim: **
+
+**2) Opposite statement:**
+
+**3) H_0: mean   ;H_1: mean   **
+
+   
+**4) Creat R-code to find p-value**
+
+```{r}
+
+
+
+
+```
+
+**5)	Write conclusion about your claim. **
+
+
+Part b)
+
+**1) Claim: **
+
+**2) Opposite statement:**
+
+**3) H_0: mean    ; H_1: mean   **
+   
+**4) Creat R-code to find p-value**
+
+```{r}
+
+
+
+```
+
+**5)	Write conclusion about your claim. **
+
+
+15.(2points) Compare mean of height of men and mean of height of women. You can make a claim with any sign that you think is true (less, greater or not equal). 
+
+Please indicate:
+
+1)	What is your claim? 
+
+2)	What is your opposite statement?
+
+3)	What is null and alternative hypothesis. 
+
+4)	What is p-value.
+
+5)	Write your conclusion about your claim. 
+
+
+Example: 
+
+1) Claim: The mean height of men is greater than the mean height of women.
+
+2) Opposite statement: The mean height of men is less or equal to the mean height of women.
+
+3) H_0: mean of height of men=mean of height of women. 
+
+   H_1: mean of height of men>mean of height of women. 
+
+4) You type R-code to find p-value
+
+t.test(data$Height_M, data$Height_W, alternative="greater")
+
+5) Write conclusion: Since p-value =  1.571e-14 < alpha=0.05, we reject H_0. We have enough evidence to support the claim.
+
+**1) Claim: **
+
+**2) Opposite statement:**
+
+**3) H_0: mean      ;  H_1: mean   **
+   
+**4) Creat R-code to find p-value**
+
+
+```{r}
+
+
+```
+**5)	Write conclusion about your claim. **
+
+
+
+16.(2points) Compare mean of shoe size of men and mean of shoe size of women. You can make a claim with any sign that you think is true (less, greater or not equal). 
+
+**1) Claim: **
+
+**2) Opposite statement:**
+
+**3) H_0: mean      ;  H_1: mean   **
+   
+**4) Creat R-code to find p-value**
+
+```{r}
+
+
+
+```
+
+**5)	Write conclusion about your claim. **
+
+
+17) (2points) Construct a scatter plot for height of men (x-axis) and size of men's shoes (y-axis)
+
+
+
+```{r}
+
+
+
+```
+
+18) (2points) Find a linear correlation coefficient between height of men and size of men's shoes .
+
+
+```{r}
+
+
+
+```
+  
+  
+**What is a linear correlation coefficient?**
+
+
+19) (2points) Find regression line for height of men (x-variable) and size of men's shoes (y-variable)
+
+
+```{r}
+
+
+
+```
+
+**What is a regression line?**
+ 
+20) (2points) Construct a scatter plot for height of men (x-axis) and size of men's shoes (y-axis) and the regression line on the same plot. 
+
+```{r}
+
+
+
+
+```
+
+
+
+21) (2points) Construct a scatter plot for height of women (x-axis) and size of women's shoes (y-axis)
+
+
+
+```{r}
+
+
+```
+
+22) (2points) Find a linear correlation coefficient between height of women and size of women's shoes .
+
+
+```{r}
+
+
+
+```
+  
+  
+**What is a linear correlation coefficient? What is the strength of relationship? **
+
+
+23) (2points) Find regression line for height of women (x-variable) and size of women's shoes (y-variable)
+
+
+```{r}
+
+
+```
+
+**What is a regression line?**
+ 
+24) (2points) Construct a scatter plot for height of women (x-axis) and size of women's shoes (y-axis) and the regression line on the same plot. 
+
+```{r}
+
+
+
+```
+
+
+
+
+
