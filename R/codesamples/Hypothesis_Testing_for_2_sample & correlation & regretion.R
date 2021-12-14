@@ -20,7 +20,7 @@ t.test(Drug, No_Drug, alternative="less")
 
 #############################################################
 
-data=read.csv("course_evaluation.csv")
+data=read.csv("../inclassdata/course_evaluation1.csv")
 data
 
 #H_0:mu_F=mu_M
@@ -44,12 +44,13 @@ t.test(data$Female, data$Male, alternative="less")
 #Correlation & Regression
 
 
-Blood_Pressure=read.csv("Blood_Pressure.csv")
+Blood_Pressure=read.csv("../inclassdata/Blood_Pressure.csv")
 Blood_Pressure
 
 #Construct a scatter plot 
 
-plot(Blood_Pressure$Age,Blood_Pressure$Blood.Pressure)
+plot(Blood_Pressure$Age,Blood_Pressure$Blood.Pressure,
+     xlab="Age", ylab="Blood Pressure")
 
 #Find a linear correlation coefficient between age and blood pressure.
 
@@ -57,15 +58,15 @@ cor.test( Blood_Pressure$Age,Blood_Pressure$Blood.Pressure)
 
 #Find regression line for age (x-variable) and size blood pressure (y-variable)
 
-regration_model=lm(Blood_Pressure$Blood.Pressure~Blood_Pressure$Age)
-regration_model
+regression_model=lm(Blood_Pressure$Blood.Pressure~Blood_Pressure$Age)
+regression_model
 
 # Construct a scatter plot and the regression line on the same plot. 
 
 
 plot(Blood_Pressure$Age,Blood_Pressure$Blood.Pressure)
 
-abline(regration_model)
+abline(regression_model)
 
 ##################
 
@@ -76,8 +77,11 @@ abline(regration_model)
 x=c(70,71,71.5,75)
 y=c(119,125,127,128)
 
+cor.test(x,y)
+regress=lm(y~x)
 
-
+plot(x,y)
+abline(regress)
 ############
 
 #######

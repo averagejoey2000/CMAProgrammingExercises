@@ -14,7 +14,7 @@ output:
 
 ```{r}
 
-data=read.csv("mydata.csv", stringsAsFactors = T)
+data=read.csv("data.csv", stringsAsFactors = T)
 
 
 ```
