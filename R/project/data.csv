@@ -1,36 +1,31 @@
-Height_M,Size_Shoes_M,Color_Hair_M,Height_W,Size_Shoes_W,Color_Hair_W,,
-62.50,7.50,Black,69.00,11.00,Brown,,
-74.00,13.00,Brown ,62.00,7.00,Brown,,
-71.00,11.00,Brown ,63.00,9.00,Brown,,
-71.00,12.00,Brown ,62.00,7.00,Brown,,
-67.00,12.00,Yellow,60.00,8.00,Black,,
-68.00,10.50,Brown ,62.00,7.00,Black,,
-70.00,10.00,Brown ,62.00,9.00,Brown,,
-68.00,11.00,Black,68.00,8.50,Brown,,
-69.00,8.00,Brown ,69.00,11.00,Brown,,
-69.00,10.00,Brown ,73.00,14.00,Red,,
-72.00,11.00,Blonde,65.00,7.00,Brown,,
-70.00,9.00,Brown ,59.00,7.00,Brown,,
-70.00,9.50,Black,68.00,9.00,Brown,,
-74.00,14.00,Black,65.00,8.00,Blonde,,
-77.00,14.00,Blonde,67.00,8.00,Brown,,
-65.00,6.50,Black,65.00,8.00,Black,,
-71.00,12.00,Brown ,60.00,8.00,Brown,,
-66.00,6.50,Brown ,62.00,7.00,Brown,,
-72.00,13.00,Brown ,62.00,9.00,Brown,,
-80.00,9.00,Blonde,68.00,8.50,Brown,,
-48.00,11.00,Black,69.00,11.00,Blonde,,
-71.00,12.00,Brown ,59.00,10.00,Brown,,
-69.00,13.00,Brown ,68.00,11.00,Brown,,
-69.00,11.00,Black,65.00,8.00,Brown,,
-58.00,14.00,Brown ,67.00,10.00,Brown,,
-67.00,10.00,Brown ,65.00,11.00,Black,,
-61.00,10.50,Blonde,60.00,7.00,Brown,,
-62.00,9.00,Brown ,62.00,9.00,Brown,,
-67.00,11.00,Brown ,69.00,5.00,Black,,
-77.00,11.00,Brown ,,,,,
-71.00,13.00,Brown ,,,,,
-64.00,12.00,Brown ,,,,,
-75.00,11.50,Blonde,,,,,
-73.00,10.00,Red,,,,,
-69.00,11.00,Brown ,,,,,
+Height_M,Size_Shoes_M,Color_Hair_M,Height_W,Size_Shoes_W,Color_Hair_W
+62.50,7.50,Black,69.00,11.00,Brown 
+74.00,13.00,Brown ,62.00,7.00,Brown 
+71.00,11.00,Brown ,63.00,9.00,Brown 
+71.00,12.00,Brown ,62.00,7.00,Brown 
+67.00,12.00,Yellow,60.00,8.00,Black
+68.00,10.50,Brown ,62.00,7.00,Black
+70.00,10.00,Brown ,62.00,9.00,Brown 
+68.00,11.00,Black,68.00,8.50,Brown 
+69.00,8.00,Brown ,69.00,11.00,Brown 
+69.00,10.00,Brown ,73.00,14.00,Red
+72.00,11.00,Blonde,65.00,7.00,Brown 
+70.00,9.00,Brown ,59.00,7.00,Brown 
+70.00,9.50,Black,68.00,9.00,Brown 
+74.00,14.00,Black,65.00,8.00,Blonde
+77.00,14.00,Blonde,67.00,8.00,Brown 
+65.00,6.50,Black,65.00,8.00,Black
+71.00,12.00,Brown ,60.00,8.00,Brown 
+66.00,6.50,Brown ,62.00,7.00,Brown 
+72.00,13.00,Brown ,62.00,9.00,Brown 
+80.00,9.00,Blonde,68.00,8.50,Brown 
+48.00,11.00,Black,69.00,11.00,Blonde
+71.00,12.00,Brown ,59.00,10.00,Brown 
+69.00,13.00,Brown ,68.00,11.00,Brown 
+69.00,11.00,Black,65.00,8.00,Brown 
+61.00,10.50,Blonde,67.00,10.00,Brown 
+62.00,9.00,Brown ,65.00,11.00,Black
+64.00,12.00,Brown ,60.00,7.00,Brown 
+75.00,11.50,Blonde,62.00,9.00,Brown 
+73.00,10.00,Red,69.00,5.00,Black
+62.00,7.00,Brown ,69.00,11.00,Brown 

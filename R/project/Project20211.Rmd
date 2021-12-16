@@ -5,6 +5,8 @@ title: "Project"
 author: "Joey Simone"
 output:
   word_document: default
+editor_options: 
+  chunk_output_type: inline
 ---
 
 
@@ -128,7 +130,7 @@ boxplot(data$Size_Shoes_M,
 
 10.(1points) Compare these two box plots and describe the differences between these two box plots. Does any boxplot have outliers? If so, how many outliers? 
 
-No outliers, men shoe size is smaller, but I google says that to convert men shoe size, add 2.5 sizes to number, so men's 6 is women's 8.5, so I think data shows same size feet inside the shoes.
+No outliers, men shoe size is larger, women's shoes have more range, neither plot has outliers
 
 
 11.(2points) Construct a 90% confidence interval for the estimate of mean of men's height. 
@@ -138,26 +140,13 @@ t.test(data$Height_M, conf.level=0.90)
 
 
 
-################
 
-
-t.test = function(mu,sd,n,conf_lev){
-  
-  L= mu-qt(1-(1-conf_lev)/2, lower.tail=TRUE, df=n-1)*sd/sqrt(n)
-  U= mu+qt(1-(1-conf_lev)/2, lower.tail=TRUE, df=n-1)*sd/sqrt(n)
-  return(list(L, U))
-  
-  
-  
-}
-
-t.test(mean(data$Height_M), sd(data$Height_M), length(data$Height_M), 0.90)
 
 ```
 
 **Write a statement that correctly interprets the confidence interval.**
 
-We estimate with 90% confidence that mean height of population of men is between 67.1 and 70.5 inches
+We estimate with 90% confidence that mean height of population of men is between 66.8 and 70.5 inches
 
 
 12.(2points) Construct a 95% confidence interval for the estimate of mean of women's height. 
@@ -172,7 +161,7 @@ t.test(data$Height_W, conf.level=0.95)
 ```
 
 **Write a statement that correctly interprets the confidence interval.**
-We estimate from sample, with 95% confidence, that mean population height of women is between 64.2 inches and 66.1 inches
+We estimate from sample, with 95% confidence, that mean population height of women is between 63.4 inches and 66.2 inches
 
 
 13.(2points) Construct a 94% confidence interval for the estimate of mean of shoe size for women. 
@@ -184,7 +173,7 @@ t.test(data$Size_Shoes_W, conf.level=0.94)
 ```
 
 **Write a statement that correctly interprets the confidence interval.**
-From 94% confidence Interval Margin of error, Mean Woman’s Shoe is between 8.1 and 9.4
+From 94% confidence Interval Margin of error, Mean Woman’s Shoe is between 8.1 and 9.5
 
 
 
@@ -229,13 +218,13 @@ Part a)
 
 ```{r}
 
-
+t.test(data$Height_W, mu=72, alternative = "less")
 
 
 ```
 
 **5)	Write conclusion about your claim. **
-
+P value .000000000008508<.05 alpha, so we can reject null hypothesis and accept alternative hypothesis. We have enough evidence to support claim that average woman in population is under 6 feet tall.
 
 Part b)
 
@@ -249,12 +238,12 @@ Part b)
 
 ```{r}
 
-
+t.test(data$Size_Shoes_M, mu=9, alternative = "greater")
 
 ```
 
 **5)	Write conclusion about your claim. **
-
+P value .00015 < alpha .05, reject null, accept alternative hypothesis, mens shoe population mu greater than 9.
 
 15.(2points) Compare mean of height of men and mean of height of women. You can make a claim with any sign that you think is true (less, greater or not equal). 
 
@@ -263,9 +252,8 @@ Please indicate:
 1)	What is your claim? 
 
 2)	What is your opposite statement?
-
 3)	What is null and alternative hypothesis. 
-
+Null Hypothesis is opposite statement, men $\le$ women. Alternative Hypothesis Men > Women
 4)	What is p-value.
 
 5)	Write your conclusion about your claim. 
@@ -289,39 +277,43 @@ t.test(data$Height_M, data$Height_W, alternative="greater")
 
 **1) Claim: **
 
+Men Mu Height > Women Mu Height
 **2) Opposite statement:**
 
-**3) H_0: mean      ;  H_1: mean   **
+Men Mu Height $\le$ Women Mu Height
+**3) H_0: $\mu_m \le \mu_m$      ;  H_1: $\mu_m > \mu_w$   **
    
 **4) Creat R-code to find p-value**
 
 
 ```{r}
+t.test(data$Height_M, data$Height_W, alternative = "greater")
 
 
 ```
 **5)	Write conclusion about your claim. **
-
+p-values .0019 < alpha .05, reject $h_0$, support $h_1$, support claim, we have 95% confidence that men are taller than women
 
 
 16.(2points) Compare mean of shoe size of men and mean of shoe size of women. You can make a claim with any sign that you think is true (less, greater or not equal). 
 
-**1) Claim: **
+**1) Claim: Men's Shoe not equal Women's Shoe **
 
-**2) Opposite statement:**
+**2) Opposite statement:Men's Shoe equals Women's shoe**
 
-**3) H_0: mean      ;  H_1: mean   **
+**3) $H_0$: $\mu_m = \mu_w$      ;  $H_1$: $\mu_m \neq \mu_w$   **
    
 **4) Creat R-code to find p-value**
 
 ```{r}
 
+t.test(data$Size_Shoes_M, data$Size_Shoes_W, alternative = "two.sided")
 
 
 ```
 
 **5)	Write conclusion about your claim. **
-
+p value .001 is less than .05 alpha, reject null hypothesis, support alternative hypothesis, we have enough evidence to prove that men's average shoe is not equal to women's average shoe.
 
 17) (2points) Construct a scatter plot for height of men (x-axis) and size of men's shoes (y-axis)
 
