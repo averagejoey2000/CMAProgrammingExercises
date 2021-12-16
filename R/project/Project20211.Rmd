@@ -2,10 +2,9 @@
 
 ---
 title: "Project"
-author: "Your name is here"
+author: "Joey Simone"
 output:
   word_document: default
-  pdf_document: default
 ---
 
 
@@ -31,7 +30,9 @@ summary(data)
 3.(2points) Create a bar plot for hair color of men. 
 
 ```{r}
-
+mencol=table(data$Color_Hair_M)
+barplot(mencol,
+        col=rainbow(length(mencol)))
 
 
     
@@ -43,6 +44,9 @@ summary(data)
 
 ```{r}
 
+womencol=table(data$Color_Hair_W)
+barplot(womencol,
+        col=rainbow(length(womencol)))
 
 ```
        
@@ -54,7 +58,9 @@ summary(data)
 
 ```{r}
 
-
+hist(data$Height_M,
+     xlab = "Height",
+     freq = T)
 
 
 ```
@@ -67,6 +73,9 @@ summary(data)
 ```{r}
 
 
+hist(data$Size_Shoes_W,
+     xlab = "Shoe Size",
+     freq = T)
 
 ```
 
@@ -78,7 +87,13 @@ summary(data)
 7.(2points)	Construct two Box Plots (one for height of men and another for height of women) on the same plot.
 
 ```{r}
-
+boxplot(data$Height_M,
+        data$Height_W,
+        
+        names = c("Men", "Women"),
+        xlab = "Height",
+        col = c("Blue", "Pink"),
+        horizontal = F)
 
 
 ```
@@ -87,12 +102,22 @@ summary(data)
 
 8.(1points) Compare these two box plots and describe the differences between these two box plots. Does any boxplot have outliers? If so, how many outliers? 
 
+Women are shorter in all quartiles, only men have outliers, and have a wider range overall. Min height woman shorter than min height man, q1 woman shorter than q1 man, etc. Men have 3 outliers, women have no outliers.
 
 
 9.(2points) Construct two Box Plots (one for size of shoes for men and another for size of shoes for women) on the same plot.
 
 
 ```{r}
+
+boxplot(data$Size_Shoes_M,
+        data$Size_Shoes_W,
+        
+        names = c("Men", "Women"),
+        xlab = "Shoe Size",
+        col = c("Blue", "Pink"),
+        horizontal = F)
+
 
 
 
@@ -103,25 +128,43 @@ summary(data)
 
 10.(1points) Compare these two box plots and describe the differences between these two box plots. Does any boxplot have outliers? If so, how many outliers? 
 
-
+No outliers, men shoe size is smaller, but I google says that to convert men shoe size, add 2.5 sizes to number, so men's 6 is women's 8.5, so I think data shows same size feet inside the shoes.
 
 
 11.(2points) Construct a 90% confidence interval for the estimate of mean of men's height. 
 
 ```{r}
+t.test(data$Height_M, conf.level=0.90)
 
 
+
+################
+
+
+t.test = function(mu,sd,n,conf_lev){
+  
+  L= mu-qt(1-(1-conf_lev)/2, lower.tail=TRUE, df=n-1)*sd/sqrt(n)
+  U= mu+qt(1-(1-conf_lev)/2, lower.tail=TRUE, df=n-1)*sd/sqrt(n)
+  return(list(L, U))
+  
+  
+  
+}
+
+t.test(mean(data$Height_M), sd(data$Height_M), length(data$Height_M), 0.90)
 
 ```
 
 **Write a statement that correctly interprets the confidence interval.**
 
-
+We estimate with 90% confidence that mean height of population of men is between 67.1 and 70.5 inches
 
 
 12.(2points) Construct a 95% confidence interval for the estimate of mean of women's height. 
 
 ```{r}
+
+t.test(data$Height_W, conf.level=0.95)
 
 
 
