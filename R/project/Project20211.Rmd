@@ -172,19 +172,19 @@ t.test(data$Height_W, conf.level=0.95)
 ```
 
 **Write a statement that correctly interprets the confidence interval.**
-
+We estimate from sample, with 95% confidence, that mean population height of women is between 64.2 inches and 66.1 inches
 
 
 13.(2points) Construct a 94% confidence interval for the estimate of mean of shoe size for women. 
 
 ```{r}
-
+t.test(data$Size_Shoes_W, conf.level=0.94)
 
 
 ```
 
 **Write a statement that correctly interprets the confidence interval.**
-
+From 94% confidence Interval Margin of error, Mean Woman’s Shoe is between 8.1 and 9.4
 
 
 
@@ -218,11 +218,11 @@ t.test(data$Size_Shoes_W, mu=9, alternative="less")
 
 Part a)
 
-**1) Claim: **
+**1) Claim:Mean Woman under 6 feet tall (72 inches) **
 
-**2) Opposite statement:**
+**2) Opposite statement: Mean Woman greater than or equal to 72 inch**
 
-**3) H_0: mean   ;H_1: mean   **
+**3) H_0: 72=mean   ;H_1: 72<mean   **
 
    
 **4) Creat R-code to find p-value**
@@ -239,11 +239,11 @@ Part a)
 
 Part b)
 
-**1) Claim: **
+**1) Claim:Mean Man’s Shoe Greater than Size 9**
 
-**2) Opposite statement:**
+**2) Opposite statement: Mean Man’s Shoe less than or equal to 9**
 
-**3) H_0: mean    ; H_1: mean   **
+**3) H_0: 9=mean    ; H_1: 9<mean   **
    
 **4) Creat R-code to find p-value**
 
