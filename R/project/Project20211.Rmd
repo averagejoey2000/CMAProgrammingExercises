@@ -320,7 +320,9 @@ p value .001 is less than .05 alpha, reject null hypothesis, support alternative
 
 
 ```{r}
-
+plot(data$Height_M, data$Size_Shoes_M,
+     xlab = "Height",
+     ylab = "Shoe Size")
 
 
 ```
@@ -331,29 +333,36 @@ p value .001 is less than .05 alpha, reject null hypothesis, support alternative
 ```{r}
 
 
+cor.test(data$Height_M, data$Size_Shoes_M)
 
 ```
   
   
 **What is a linear correlation coefficient?**
-
+.34, moderate correlation.
 
 19) (2points) Find regression line for height of men (x-variable) and size of men's shoes (y-variable)
 
 
 ```{r}
-
+menshoeline=lm(data$Size_Shoes_M~data$Height_M)
+menshoeline
 
 
 ```
 
 **What is a regression line?**
- 
+$shoe=height\times.1203+2.2874$
 20) (2points) Construct a scatter plot for height of men (x-axis) and size of men's shoes (y-axis) and the regression line on the same plot. 
 
 ```{r}
 
 
+plot(data$Height_M, data$Size_Shoes_M,
+     xlab = "Height",
+     ylab = "Shoe Size")
+
+abline(menshoeline)
 
 
 ```
@@ -366,6 +375,10 @@ p value .001 is less than .05 alpha, reject null hypothesis, support alternative
 
 ```{r}
 
+plot(data$Height_W, data$Size_Shoes_W,
+     xlab = "Height",
+     ylab = "Shoe Size")
+
 
 ```
 
@@ -374,13 +387,14 @@ p value .001 is less than .05 alpha, reject null hypothesis, support alternative
 
 ```{r}
 
+cor.test(data$Height_W, data$Size_Shoes_W)
 
 
 ```
   
   
 **What is a linear correlation coefficient? What is the strength of relationship? **
-
+.53, Moderate Correlation
 
 23) (2points) Find regression line for height of women (x-variable) and size of women's shoes (y-variable)
 
@@ -388,16 +402,23 @@ p value .001 is less than .05 alpha, reject null hypothesis, support alternative
 ```{r}
 
 
+womenshoeline=lm(data$Size_Shoes_W~data$Height_W)
+womenshoeline
 ```
 
 **What is a regression line?**
+$shoesize=.269\times height-8.629$
  
 24) (2points) Construct a scatter plot for height of women (x-axis) and size of women's shoes (y-axis) and the regression line on the same plot. 
 
 ```{r}
 
 
+plot(data$Height_W, data$Size_Shoes_W,
+     xlab = "Height",
+     ylab = "Shoe Size")
 
+abline(womenshoeline)
 ```
 
 
